@@ -1,3 +1,6 @@
+## Update
+This script no longer works due to changes in, I'm assuming, PyTube. I'll be attempting to rewrite it soon.  
+
 # hollowlake-pytube
 A video downloader using the Python PyTube library
 
