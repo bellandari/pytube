@@ -6,16 +6,15 @@ while True:
     url = input("Paste Youtube URL: ")
     yt = YouTube(url, on_progress_callback=on_progress)
     
-    print(f"{yt.title} found...") 
+    print(f"Located: {yt.title}") 
 
-    name = input("Enter new file name: ")
-    choice = input("Is this 'Video Only'? (Y/N): ")
+    choice = input("Is this a 'Video Only' download? (Y/N): ")
 
     if choice[0] == 'y':
         try:
-            print(f"Downloading {yt.title}...")
+            print(f"Downloading as video only...")
             
-            yt.streams.filter(adaptive=True).first().download('C:\directoryhere', filename=name)   
+            yt.streams.filter(adaptive=True).first().download('D:\Videos\VideoOnly')
                 
             print(f'\n{yt.title} has finished downloading as Video Only.')
         
@@ -24,12 +23,11 @@ while True:
     
     else:
         try:
-            print(f"Downloading {yt.title}...")
+            print(f"Downloading complete video...")
 
-            yt.streams.get_highest_resolution().download('C:\directoryhere', filename=name)    
+            yt.streams.get_highest_resolution().download('D:\Videos')    
                 
-            print(f'\n{yt.title} has finished downloading as Video/Audio.')
+            print(f'\n{yt.title} has finished downloading.')
                 
         except EOFError as err:
             print("An error occured, try again.")
-            

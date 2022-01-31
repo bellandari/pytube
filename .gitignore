@@ -1,0 +1,7 @@
+dist
+build
+__pycache__
+poetry.lock
+pyproject.toml
+PyTube.spec
+vdownicon.ico
